@@ -336,7 +336,7 @@ class O {
 			case "$=": return substr($left,-strlen($right)) === $right;
 			case "%=": return strpos($left,$right) !== false;
 			case "~=": return in_array($right,preg_split('/\s+/',$left));
-			case "|=": return ($left === $right) || (strpos($left,$right."-") === 0);
+			// case "|=": return ($left === $right) || (strpos($left,$right."-") === 0);
 			case ">": return $left > $right;
 			case "<": return $left < $right;
 			case ">=": return $left >= $right;
@@ -12462,8 +12462,8 @@ if(is_numeric($indices)) {
 			case '~=':
 				return in_array($right, preg_split('/\s+/', $left));
 
-			case '|=':
-				return ($left === $right) || (strpos($left, $right . '-') === 0);
+			// case '|=':
+			// 	return ($left === $right) || (strpos($left, $right . '-') === 0);
 
 			case '>':
 				return $left > $right;
